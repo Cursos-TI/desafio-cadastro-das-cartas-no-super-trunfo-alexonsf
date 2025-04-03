@@ -1,0 +1,20 @@
+name: Build and Test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fazer checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Instalar o GCC
+        run: sudo apt-get update && sudo apt-get install -y gcc
+
+      - name: Compilar o programa C
+        run: gcc CartasSuperTrunfo.c -o CartasSuperTrunfo
+
+      - name: Executar o programa com entrada de exemplo
+        run: |
+          echo -e "S\nABC\nCidade1\n1000000\n500.0\n10.5\n15\nR\nXYZ\nCidade2\n2000000\n600.0\n12.3\n20" | ./CartasSuperTrunfo
