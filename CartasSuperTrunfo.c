@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+    // Alteração para acionar o workflow
     // Variáveis para a Carta 1
     char estado1;                      // Ex: sigla do estado
     char codigo1[4];                   // Código da carta (máximo 3 caracteres + '\0')
